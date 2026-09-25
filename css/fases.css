@@ -1,0 +1,205 @@
+/* BioTravessias | Luciana | Páginas da biografia por fases
+   Cada página usa uma única cor, em versão sóbria da paleta do conto. */
+
+:root {
+  --tinta: #2B1438;
+  --tinta-suave: #5E4A6B;
+  --papel: #FFFDF8;
+  --dourado-vr: #B8862B;
+  --titulo: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --corpo: "Figtree", "Segoe UI", Arial, sans-serif;
+}
+
+/* Tons sóbrios derivados da paleta do conto */
+.fase--petroleo { --tom: #1F5F63; --tom-claro: #E7F0F0; --tom-medio: #9CC1C2; } /* da turquesa */
+.fase--ameixa   { --tom: #4B2A5C; --tom-claro: #EFE9F2; --tom-medio: #B7A3C2; } /* do roxo */
+.fase--vinho    { --tom: #7A2E4C; --tom-claro: #F5E9EE; --tom-medio: #CFA0B3; } /* do pink */
+.fase--ocre     { --tom: #7A5C1C; --tom-claro: #F5EFE1; --tom-medio: #D2BC86; } /* do amarelo-sol */
+.fase--tijolo   { --tom: #8A3A2C; --tom-claro: #F6EAE6; --tom-medio: #D5A396; } /* do coral */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--corpo);
+  font-size: 1.075rem;
+  line-height: 1.75;
+}
+
+/* Texto corrido: sempre justificado com hifenização */
+p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  margin: 0 0 1.15em;
+}
+
+a { color: var(--tom); }
+:focus-visible { outline: 3px solid var(--tom); outline-offset: 3px; border-radius: 4px; }
+
+/* Barra de marca */
+.marca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem clamp(1rem, 4vw, 2.5rem);
+  border-bottom: 1px solid #EFE6DA;
+}
+.marca__link { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; }
+.monograma { width: 40px; height: 42px; }
+.marca__nome {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--dourado-vr);
+  letter-spacing: .04em;
+}
+.marca__voltar { font-size: .95rem; font-weight: 600; text-decoration: none; }
+.marca__voltar:hover { text-decoration: underline; }
+
+/* Abertura */
+.abertura {
+  background: var(--tom);
+  color: #FFFDF8;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
+}
+.abertura > * { max-width: 44rem; margin-left: auto; margin-right: auto; text-align: left; }
+.abertura__serie { font-size: .95rem; opacity: .85; margin-bottom: .5rem; }
+.abertura__titulo {
+  font-family: var(--titulo);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+  line-height: 1.02;
+  margin-top: 0;
+  margin-bottom: .8rem;
+}
+.abertura__periodo { font-family: var(--titulo); font-style: italic; font-size: 1.25rem; margin-bottom: 0; }
+
+/* Navegação entre fases */
+/* a faixa acompanha a largura do texto */
+.fases { padding: 0 clamp(1rem, 4vw, 1.5rem); border-bottom: 1px solid var(--tom-medio); background: var(--tom-claro); }
+.fases ol {
+  list-style: none;
+  display: flex;
+  gap: .4rem;
+  overflow-x: auto;
+  margin: 0 auto;
+  padding: .7rem 0;
+  max-width: 44rem;
+  scrollbar-width: none;
+}
+.fases ol::-webkit-scrollbar { display: none; }
+.fases a {
+  display: block;
+  white-space: nowrap;
+  font-size: .9rem;
+  text-decoration: none;
+  color: var(--tinta-suave);
+  padding: .3rem .8rem;
+  border-radius: 999px;
+}
+.fases a:hover { background: #fff; }
+.fases a[aria-current="page"] { background: var(--tom); color: #fff; font-weight: 600; }
+
+/* Texto */
+.texto {
+  max-width: calc(44rem + 2 * clamp(1rem, 4vw, 1.5rem));
+  margin: 0 auto;
+  padding: 2.5rem clamp(1rem, 4vw, 1.5rem) 1rem;
+}
+
+.obra {
+  font-size: .93rem;
+  font-style: italic;
+  color: var(--tom);
+  border: 1.5px dashed var(--tom-medio);
+  border-radius: 10px;
+  padding: .7rem 1rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Boxes */
+.box { border-radius: 14px; padding: 1.3rem 1.5rem; }
+.box__titulo {
+  font-family: var(--titulo);
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 0 0 .7rem;
+  color: var(--tom);
+}
+
+.box--fala {
+  background: var(--tom-claro);
+  border-left: 5px solid var(--tom);
+  margin: 2.2rem 0;
+}
+.box--fala blockquote { margin: 0; }
+.box--fala blockquote p {
+  font-family: var(--titulo);
+  font-size: 1.45rem;
+  line-height: 1.35;
+  text-align: left;
+  margin-bottom: .6rem;
+}
+.box__fonte { font-size: .85rem; color: var(--tinta-suave); margin: 0; text-align: left; }
+
+.boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0; }
+.box--pessoas { border: 1.5px solid var(--tom-medio); }
+.box--falta { border: 1.5px dashed var(--tom-medio); }
+.box ul { margin: 0; padding-left: 1.1rem; }
+.box li { margin-bottom: .35rem; line-height: 1.5; }
+.box li::marker { color: var(--tom); }
+.box--falta li { color: var(--tinta-suave); font-size: .95rem; }
+
+/* Anterior / próxima */
+.passos {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--tom-medio);
+}
+.passo {
+  font-weight: 600;
+  text-decoration: none;
+  padding: .55rem 1rem;
+  border: 1.5px solid var(--tom);
+  border-radius: 999px;
+}
+.passo:hover { background: var(--tom); color: #fff; }
+.passo--prox { margin-left: auto; }
+
+/* Rodapé */
+.rodape {
+  margin-top: 3rem;
+  padding: 2.5rem clamp(1rem, 4vw, 2.5rem) 2rem;
+  text-align: center;
+  background: #FBF6EC;
+  border-top: 6px solid var(--tom);
+}
+.rodape__marca { display: inline-flex; flex-direction: column; align-items: center; }
+.monograma--grande { width: 64px; height: 68px; }
+.rodape__nome {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: .18em;
+  color: var(--dourado-vr);
+  margin: .3rem 0 1rem;
+  text-align: center;
+}
+.rodape__autoria, .rodape__credito { text-align: center; margin: 0 auto .6rem; max-width: 48rem; }
+.rodape__autoria { font-style: italic; }
+.rodape__credito { font-size: .85rem; color: var(--tinta-suave); line-height: 1.6; }
+
+@media (max-width: 700px) {
+  .boxes { grid-template-columns: 1fr; }
+  .passo--prox { margin-left: 0; }
+}
