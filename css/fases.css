@@ -57,8 +57,23 @@ a { color: var(--tom); }
   color: var(--dourado-vr);
   letter-spacing: .04em;
 }
-.marca__voltar { font-size: .95rem; font-weight: 600; text-decoration: none; }
-.marca__voltar:hover { text-decoration: underline; }
+/* Menu: O conto / A biografia */
+.menu { display: flex; gap: .4rem; }
+.menu__item {
+  font-size: .95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--tom);
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--tom);
+}
+.menu__item:hover { background: var(--tom-claro); }
+.menu__item[aria-current="page"] { background: var(--tom); color: #fff; }
+@media (max-width: 480px) {
+  .marca__nome { display: none; }
+  .menu__item { padding: .35rem .8rem; font-size: .9rem; }
+}
 
 /* Abertura */
 .abertura {

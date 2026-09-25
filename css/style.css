@@ -530,3 +530,34 @@ cite { font-style: italic; }
   color: var(--roxo);
   min-width: 3.6rem;
 }
+
+/* ---------- Menu: O conto / A biografia ---------- */
+.marca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.menu { display: flex; gap: .4rem; }
+.menu__item {
+  font-size: .95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--roxo);
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--roxo);
+}
+.menu__item:hover { background: #F7F0F8; }
+.menu__item[aria-current="page"] { background: var(--roxo); color: #fff; }
+
+.sobre__link {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--roxo);
+  margin-bottom: 1rem;
+}
+@media (max-width: 480px) {
+  .marca__nome { display: none; }
+  .menu__item { padding: .35rem .8rem; font-size: .9rem; }
+}
