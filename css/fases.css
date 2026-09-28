@@ -242,3 +242,21 @@ a { color: var(--tom); }
 }
 .box--fontes li strong { color: var(--tom); }
 .box--fontes a { font-weight: 600; white-space: nowrap; }
+
+/* Fotografias (soltas, sem moldura redonda) */
+.foto { margin: 2rem 0; }
+.foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.foto--retrato { max-width: 360px; margin-left: auto; margin-right: auto; }
+.foto figcaption {
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+  margin-top: .55rem;
+  padding-left: .8rem;
+  border-left: 3px solid var(--tom);
+}

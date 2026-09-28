@@ -561,3 +561,7 @@ cite { font-style: italic; }
   .marca__nome { display: none; }
   .menu__item { padding: .35rem .8rem; font-size: .9rem; }
 }
+
+/* ---------- Foto antiga em formato retrato (sem moldura redonda) ---------- */
+.foto--retrato { max-width: 320px; margin-left: auto; margin-right: auto; }
+.foto--retrato img { border-radius: 4px; box-shadow: 0 6px 18px rgba(43, 20, 56, .18); }
