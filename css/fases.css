@@ -218,3 +218,27 @@ a { color: var(--tom); }
   .boxes { grid-template-columns: 1fr; }
   .passo--prox { margin-left: 0; }
 }
+
+/* Box de lenda ou curiosidade */
+.box--lenda {
+  background: #FBF6EC;
+  border: 1.5px solid var(--tom-medio);
+  margin: 2.2rem 0;
+}
+.box--lenda p { margin-bottom: 0; }
+
+/* Quadro de fontes, em tom informal */
+.box--fontes {
+  background: var(--tom-claro);
+  margin: 2rem 0;
+}
+.box--fontes .box__intro { font-size: .95rem; color: var(--tinta-suave); }
+.box--fontes ul { list-style: none; padding-left: 0; }
+.box--fontes li {
+  font-size: .95rem;
+  line-height: 1.55;
+  padding: .7rem 0;
+  border-top: 1px solid var(--tom-medio);
+}
+.box--fontes li strong { color: var(--tom); }
+.box--fontes a { font-weight: 600; white-space: nowrap; }
