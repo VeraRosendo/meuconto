@@ -392,6 +392,7 @@ cite { font-style: italic; }
   width: 100%;
   border-radius: 14px;
 }
+.foto img { height: auto; }
 .foto__vazio {
   aspect-ratio: 4 / 3;
   display: grid;
